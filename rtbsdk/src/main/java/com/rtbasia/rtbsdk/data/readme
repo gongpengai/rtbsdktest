@@ -1,0 +1,42 @@
+syntax = "proto3";
+option java_package = "com.tagphi.rtbasiasdk";
+package bean;
+message Info {
+
+    string ipV4 = 1;
+    string ipV6 = 2;
+    LocationInfo location = 3;
+    repeated WifiInfo wifi_list= 4;
+    string my_SSID = 5;
+    string my_BSSID = 6;
+    string my_level = 7;//连接wifi的信号强度
+    DeviceInfo device = 8;
+}
+
+message WifiInfo {
+
+    string SSID = 1;
+    string BSSID = 2;
+    string level = 3;//wifi的信号强度
+}
+
+message DeviceInfo {
+
+    string device_id = 1;
+    string android_id = 2;
+    string model = 3;//手机型号
+    string brand = 4;//手机系统定制商
+    string product = 5;//手机制造商
+    string device = 6;//设备参数
+    string app_name = 7;//当前应用的名字
+    string os_version = 8;//系统版本
+    string applicationid = 9;//包名
+}
+
+message LocationInfo {
+
+    string latitude = 1;//纬度
+    string longitude = 2;//经度
+    string altitude = 3;//海拔
+    string time = 4;//时间
+}
